@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Girlfriend's Day, My Love! ❤️</title>
+    <!-- Google Fonts for cute, elegant typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;600;700&family=Sacramento&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti Library for heart explosions -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cute custom floating hearts in background -->
+    <div class="bg-hearts-container" id="bgHeartsContainer"></div>
+
+    <!-- Music toggle button -->
+    <button class="music-toggle-btn" id="musicToggleBtn" aria-label="Toggle Music">
+        <i class="fa-solid fa-music"></i>
+        <span class="music-note-icon">🎵</span>
+    </button>
+
+    <!-- Welcome / Gift Box Intro Overlay -->
+    <div class="welcome-overlay" id="welcomeOverlay">
+        <div class="welcome-card glass-panel">
+            <h1 class="romantic-title">Happy Girlfriend's Day!</h1>
+            <p class="sweet-subtitle">I have created a little secret world just for you. Open your gift to enter...</p>
+            
+            <!-- Interactive Gift Box -->
+            <div class="gift-box-container" id="giftBoxContainer">
+                <div class="gift-box">
+                    <div class="gift-lid"></div>
+                    <div class="gift-body"></div>
+                    <div class="gift-ribbon"></div>
+                </div>
+            </div>
+            
+            <p class="tap-instruction">Click the box to open! 🎁</p>
+        </div>
+    </div>
+
+    <!-- Main Application Container (Hidden initially, shown after box open) -->
+    <main class="main-app hidden" id="mainApp">
+        <header class="app-header">
+            <div class="header-content glass-panel">
+                <div class="couple-avatar-container">
+                    <!-- Premium AI Generated illustration -->
+                    <img src="assets/p1.jpeg" alt="Cute Cuddly Kittens" class="couple-avatar">
+                </div>
+                <h1 class="main-title">To My Favorite Human ✨</h1>
+                <p class="main-subtitle">Thank you for making my life so incredibly beautiful every single day.</p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="app-nav">
+            <div class="nav-container glass-panel">
+                <button class="nav-tab active" data-tab="memory-lane">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>Our Story</span>
+                </button>
+                <button class="nav-tab" data-tab="love-jar">
+                    <i class="fa-solid fa-jar"></i>
+                    <span>Magic Jar</span>
+                </button>
+                <button class="nav-tab" data-tab="bouquet-builder">
+                    <i class="fa-solid fa-seedling"></i>
+                    <span>Bouquet</span>
+                </button>
+                <button class="nav-tab" data-tab="heart-catcher">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <span>Catch Love</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Tab Contents -->
+        <section class="content-section">
+            
+            <!-- TAB 1: Memory Lane -->
+            <div class="tab-pane active" id="memory-lane">
+                <div class="lane-intro text-center">
+                    <h2>Memory Lane 📖</h2>
+                    <p>A little walk down our favorite moments together. Hover/click to reveal the details!</p>
+                </div>
+                
+                <div class="timeline">
+                    <!-- Memory Card 1 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-panel hover-tilt">
+                            <div class="photo-frame">
+                                <img src="assets/p2.jpeg" class="polaroid-img" alt="Our First Hello">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-date">Chapter 1</span>
+                                <h3>The Day We Met</h3>
+                                <p>Out of all the people, in all the places, I'm so lucky my path crossed yours. You instantly brought a spark into my life that never faded.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memory Card 2 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-panel hover-tilt">
+                            <div class="photo-frame">
+                                <img src="assets/p3.jpeg" class="polaroid-img" alt="Our First Date">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-date">Chapter 2</span>
+                                <h3>Our First Date</h3>
+                                <p>I was so nervous, but the moment you smiled, all my worries melted. Time flew by too fast, and I knew right then I wanted many, many more dates with you.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memory Card 3 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-panel hover-tilt">
+                            <div class="photo-frame">
+                                <img src="assets/p4.jpeg" class="polaroid-img" alt="Late Night Talk">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-date">Chapter 3</span>
+                                <h3>Midnight Chats</h3>
+                                <p>Talking about everything, from deep thoughts to silly random memes. Hearing your sleepy voice became my favorite sound in the world.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memory Card 4 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card glass-panel hover-tilt">
+                            <div class="photo-frame">
+                                <img src="assets/p5.jpeg" class="polaroid-img" alt="Our Silent Moments">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-date">Chapter 4</span>
+                                <h3>Our Quiet Moments</h3>
+                                <p>It's not just the big adventures, but the quiet, everyday moments—watching movies, cooking together, or just sitting in silence. You make the ordinary feel extraordinary.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: Love Jar -->
+            <div class="tab-pane" id="love-jar">
+                <div class="jar-layout">
+                    <div class="jar-info text-center">
+                        <h2>Magic Love Jar 🍯</h2>
+                        <p>This jar is filled with sweet, hidden reasons why I love you. Click the jar to pull out a note and brighten your day!</p>
+                    </div>
+
+                    <div class="jar-container">
+                        <!-- SVG Jar Graphic -->
+                        <div class="jar-wrapper" id="jarWrapper">
+                            <svg class="glass-jar" viewBox="0 0 200 300">
+                                <!-- Jar Lid -->
+                                <path d="M 60 20 L 140 20 A 10 10 0 0 1 150 30 L 150 40 A 5 5 0 0 1 145 45 L 55 45 A 5 5 0 0 1 50 40 L 50 30 A 10 10 0 0 1 60 20 Z" fill="#e0a899" stroke="#b07d72" stroke-width="2" />
+                                <rect x="55" y="45" width="90" height="8" rx="2" fill="#d09889" />
+                                <!-- Jar Neck -->
+                                <path d="M 62 53 L 138 53 L 138 65 L 62 65 Z" fill="rgba(230, 245, 255, 0.3)" stroke="rgba(255, 255, 255, 0.5)" stroke-width="2" />
+                                <!-- Jar Body -->
+                                <path d="M 62 65 Q 40 70 30 110 L 30 250 Q 30 285 70 290 L 130 290 Q 170 285 170 250 L 170 110 Q 160 70 138 65 Z" fill="rgba(255, 240, 245, 0.25)" stroke="rgba(255, 255, 255, 0.6)" stroke-width="3" />
+                                <!-- Highlights/Reflections -->
+                                <path d="M 40 120 Q 38 180 42 240" stroke="rgba(255, 255, 255, 0.4)" stroke-width="4" fill="none" stroke-linecap="round" />
+                                <path d="M 160 120 Q 162 180 158 240" stroke="rgba(255, 255, 255, 0.15)" stroke-width="2" fill="none" stroke-linecap="round" />
+                                <!-- Label -->
+                                <rect x="65" y="130" width="70" height="50" rx="5" fill="#fcf8f2" stroke="#e0cbaf" stroke-width="1.5" />
+                                <text x="100" y="155" font-family="'Caveat', cursive" font-size="20" font-weight="bold" fill="#ab7668" text-anchor="middle">Reasons</text>
+                                <text x="100" y="172" font-family="'Caveat', cursive" font-size="16" fill="#c28c80" text-anchor="middle">Why I Love You</text>
+                            </svg>
+                            
+                            <!-- Little SVG floating candies/hearts inside the jar -->
+                            <div class="jar-hearts-inside" id="jarHeartsInside"></div>
+                        </div>
+                    </div>
+
+                    <!-- Note modal display -->
+                    <div class="note-reveal-area hidden" id="noteRevealArea">
+                        <div class="love-note glass-panel animated-bounce">
+                            <div class="love-note-header">
+                                <i class="fa-solid fa-heart pulse-slow"></i>
+                            </div>
+                            <p class="love-note-text" id="loveNoteText">Click the jar to read a message!</p>
+                            <button class="cute-btn small-btn" id="closeNoteBtn">Sweet! Keep going 💖</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: Bouquet Builder -->
+            <div class="tab-pane" id="bouquet-builder">
+                <div class="bouquet-showcase glass-panel">
+                    <img src="assets/beautiful_bouquet.png" alt="A Beautiful Bouquet" class="showcase-bouquet-img">
+                    <div class="showcase-text">
+                        <h3 class="showcase-caption">A beautiful bouquet for my flower 🌸</h3>
+                        <p class="showcase-alternative">...or you can create your own too, sweetheart! 💕</p>
+                    </div>
+                </div>
+                
+                <div class="bouquet-layout">
+                    <!-- Customization Control Panel -->
+                    <div class="bouquet-controls glass-panel">
+                        <h2>Bouquet Builder 🌸</h2>
+                        <p class="section-desc">Create your own custom digital bouquet! Pick flowers, select a wrap style, add a ribbon, and write a love letter.</p>
+                        
+                        <div class="control-group">
+                            <span class="group-title"><i class="fa-solid fa-flower"></i> 1. Pick Flowers (Click to Add)</span>
+                            <div class="flower-selector">
+                                <button class="select-item" data-flower="rose">
+                                    <span class="item-emoji">🌹</span>
+                                    <span class="item-label">Red Rose</span>
+                                </button>
+                                <button class="select-item" data-flower="tulip">
+                                    <span class="item-emoji">🌷</span>
+                                    <span class="item-label">Pink Tulip</span>
+                                </button>
+                                <button class="select-item" data-flower="sunflower">
+                                    <span class="item-emoji">🌻</span>
+                                    <span class="item-label">Sunflower</span>
+                                </button>
+                                <button class="select-item" data-flower="daisy">
+                                    <span class="item-emoji">🌼</span>
+                                    <span class="item-label">Daisy</span>
+                                </button>
+                                <button class="select-item" data-flower="lavender">
+                                    <span class="item-emoji">🪻</span>
+                                    <span class="item-label">Lavender</span>
+                                </button>
+                                <button class="select-item" data-flower="babybreath">
+                                    <span class="item-emoji">🌾</span>
+                                    <span class="item-label">Baby's Breath</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <span class="group-title"><i class="fa-solid fa-scroll"></i> 2. Wrap & Theme</span>
+                            <div class="wrap-selector">
+                                <button class="select-wrap active" data-wrap="kraft">Rustic Kraft</button>
+                                <button class="select-wrap" data-wrap="pink">Pink Lace</button>
+                                <button class="select-wrap" data-wrap="lavender-mist">Lavender Mist</button>
+                                <button class="select-wrap" data-wrap="glass-vase">Glass Vase</button>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <span class="group-title"><i class="fa-solid fa-ribbon"></i> 3. Add Ribbon Bow</span>
+                            <div class="ribbon-selector">
+                                <button class="select-ribbon active" data-ribbon="none">No Ribbon</button>
+                                <button class="select-ribbon" data-ribbon="pink-bow">Pink Bow 🎀</button>
+                                <button class="select-ribbon" data-ribbon="red-bow">Red Bow 🎀</button>
+                                <button class="select-ribbon" data-ribbon="gold-bow">Gold Bow 🎀</button>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <span class="group-title"><i class="fa-solid fa-pen-nib"></i> 4. Attached Card Note</span>
+                            <textarea id="bouquetNote" placeholder="Write a cute message on the bouquet card... (e.g. 'For the prettiest girl in the universe')"></textarea>
+                        </div>
+
+                        <div class="control-actions">
+                            <button class="cute-btn danger-btn btn-full" id="clearBouquetBtn"><i class="fa-solid fa-trash-can"></i> Start Fresh</button>
+                        </div>
+                    </div>
+
+                    <!-- Canvas/Visual Display Area -->
+                    <div class="bouquet-canvas-container glass-panel">
+                        <div class="canvas-header">
+                            <span class="canvas-title">Your Custom Arrangement 💐</span>
+                            <p class="canvas-hint">Click flowers to add them. Drag flowers inside the frame to arrange them!</p>
+                        </div>
+                        
+                        <div class="bouquet-workspace-wrapper">
+                            <div class="bouquet-workspace" id="bouquetWorkspace">
+                                <!-- Grid paper lines for a craft feel -->
+                                <div class="workspace-grid"></div>
+                                
+                                <!-- Card attachment display -->
+                                <div class="workspace-card-note hidden" id="workspaceCardNote">
+                                    <div class="mini-card-design">
+                                        <p id="miniCardText">For you ❤️</p>
+                                    </div>
+                                </div>
+
+                                <!-- Wrap background / Vase container -->
+                                <div class="workspace-wrap" id="workspaceWrap"></div>
+                                
+                                <!-- Container where flowers will be added dynamically -->
+                                <div class="flowers-stage" id="flowersStage"></div>
+                                
+                                <!-- Ribbon bow placement -->
+                                <div class="workspace-ribbon" id="workspaceRibbon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: Heart Catcher Game -->
+            <div class="tab-pane" id="heart-catcher">
+                <div class="game-layout">
+                    <!-- Game Info and Start Panel -->
+                    <div class="game-panel glass-panel" id="gamePanel">
+                        <h2>Catch My Love! 🎮</h2>
+                        <p>Catch falling hearts and stars in your basket. Avoid the stormy coffee cups! Reach <strong>100 points</strong> to unlock my secret love letter for you! 💌</p>
+                        
+                        <div class="game-stats-display">
+                            <div class="stat-box">
+                                <span class="stat-label">Score</span>
+                                <span class="stat-value" id="gameScoreVal">0</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Goal</span>
+                                <span class="stat-value">100</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-label">Level</span>
+                                <span class="stat-value" id="gameLevelVal">1</span>
+                            </div>
+                        </div>
+
+                        <div class="game-instructions-list">
+                            <div class="instruction-item"><span class="emoji">❤️</span> <span>Heart: 10 Points</span></div>
+                            <div class="instruction-item"><span class="emoji">⭐</span> <span>Star: 20 Points</span></div>
+                            <div class="instruction-item"><span class="emoji">☕</span> <span>Coffee cup: -15 Points (Oops, hot spill!)</span></div>
+                            <div class="instruction-item"><span class="emoji">📱/🖱️</span> <span>Drag/Move your mouse or finger to move the basket!</span></div>
+                        </div>
+
+                        <button class="cute-btn btn-full margin-top-lg" id="startGameBtn"><i class="fa-solid fa-play"></i> Start Playing!</button>
+                    </div>
+
+                    <!-- Interactive Game Canvas Container -->
+                    <div class="game-canvas-wrapper glass-panel hidden" id="gameCanvasWrapper">
+                        <div class="game-top-bar">
+                            <span class="game-live-score">Score: <strong id="liveScore">0</strong>/100</span>
+                            <span class="game-live-level">Level: <strong id="liveLevel">1</strong></span>
+                            <button class="cute-btn small-btn" id="pauseGameBtn">Restart</button>
+                        </div>
+                        <div class="canvas-holder">
+                            <canvas id="gameCanvas" width="480" height="500"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Letter Reward Overlay (Shown once score >= 100) -->
+                    <div class="letter-reward-container glass-panel hidden" id="letterReward">
+                        <div class="letter-scroll-wrapper">
+                            <div class="scroll-top"></div>
+                            <div class="letter-content animate-fade-in">
+                                <div class="heart-stamp">💌</div>
+                                <h3 class="romantic-title font-large text-center">My Promise to You</h3>
+                                <p class="letter-date">August 1st, 2026</p>
+                                
+                                <p class="letter-para">My Dearest,</p>
+                                <p class="letter-para">Happy Girlfriend's Day! If you are reading this, it means you caught my love 100 times in the game, but in reality, you catch my heart and make me fall for you all over again, every single day.</p>
+                                <p class="letter-para">From the moment we met, you've made my life infinitely brighter, warmer, and sweeter. Your laugh is my favorite soundtrack, your hugs are my safest place, and your happiness is my greatest priority.</p>
+                                <p class="letter-para">Today, I want to promise you a few things:
+                                <ul>
+                                    <li>I promise to always listen, even when you are just venting about small things.</li>
+                                    <li>I promise to celebrate your successes and hold your hand through challenges.</li>
+                                    <li>I promise to keep trying new things with you, making memories, and keeping our adventure alive.</li>
+                                    <li>And most importantly, I promise to love you fully, honestly, and with everything I have.</li>
+                                </ul>
+                                </p>
+                                <p class="letter-para">Thank you for being the most incredible girlfriend in the universe. I love you to the moon and back! 🌙💖</p>
+                                
+                                <p class="letter-signature text-right">Yours Forever,<br><span class="signature-font">Your Loving Partner</span></p>
+                            </div>
+                            <div class="scroll-bottom"></div>
+                        </div>
+                        <button class="cute-btn btn-full margin-top-md" id="closeLetterBtn">Read Again ❤️</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Playful Runaway Footer Question Section -->
+        <footer class="app-footer glass-panel">
+            <div class="footer-question-container">
+                <h3 class="footer-question">Before you go... Will you be my girlfriend forever & ever? ❤️</h3>
+                <div class="footer-actions">
+                    <button class="cute-btn success-btn" id="btnYes">YES! 😍</button>
+                    <button class="cute-btn secondary-btn" id="btnNo">No 🥺</button>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Fullscreen YES Proposal Popup Modal -->
+    <div class="proposal-overlay hidden" id="proposalOverlay">
+        <div class="proposal-modal glass-panel text-center animate-pop-in">
+            <div class="celebration-emojis">🎉🥳💖✨</div>
+            <h2 class="romantic-title font-large">SHE SAID YES!</h2>
+            <p class="proposal-subtitle">My heart is officially the happiest heart in the world!</p>
+            
+            <div class="cuddle-graphics">
+                <i class="fa-solid fa-heart heart-pop-1"></i>
+                <i class="fa-solid fa-heart heart-pop-2"></i>
+                <i class="fa-solid fa-heart heart-pop-3"></i>
+                <div class="cuddle-heart">❤️</div>
+            </div>
+
+            <div class="contract-card">
+                <p><strong>Official Love Agreement:</strong></p>
+                <ul class="agreement-list">
+                    <li><i class="fa-solid fa-check text-success"></i> Unlimited cuddles, hugs, and kisses on demand.</li>
+                    <li><i class="fa-solid fa-check text-success"></i> Free snacks, coffee, and dessert whenever requested.</li>
+                    <li><i class="fa-solid fa-check text-success"></i> Instant support, back rubs, and bad-joke laughter.</li>
+                    <li><i class="fa-solid fa-check text-success"></i> Infinite love, today, tomorrow, and always.</li>
+                </ul>
+            </div>
+            
+            <button class="cute-btn btn-full margin-top-lg" id="closeProposalOverlayBtn">Close with a kiss 💋</button>
+        </div>
+    </div>
+
+    <!-- Script loading -->
+    <script src="script.js"></script>
+</body>
+</html>
